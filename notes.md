@@ -7,3 +7,7 @@ The definition of Maybe is like:
 				| Nothing
 				
 The usage is pretty simple, once it is understood. 
+
+
+## Num ##
+The num

@@ -30,3 +30,12 @@ myReverse x = myReverse (tail x) ++ [head x]
 
 palindrome [] = []
 palindrome x = x ++ myReverse x
+
+-- SOLUTION 5 -- A function which checks if the input list is a palindrome
+ifPalindrome [] = True
+ifPalindrome x | x == myReverse x = True
+ifPalindrome x | x /= myReverse x = False
+
+-- SOLUTION 6 -- A function takes in a list of list and 
+-- sorts them based on the number of elements
+
