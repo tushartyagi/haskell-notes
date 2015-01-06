@@ -16,7 +16,7 @@ second (x:xs) = if null xs
 -- another usage of Maybe
 -- lend is a function taking two params
 -- the *let* block creates a new scope for expressions,
--- any expressions between *let* and *in* are available 
+-- any expressions between *let* and *in* are available
 -- in the lines that follow the block.
 
 lend amount balance = let reserve = 100
@@ -25,8 +25,8 @@ lend amount balance = let reserve = 100
                          then Nothing
                          else Just newBalance
 
--- We can also use *where* clause, which also creates 
--- a local scope for expressions like *let* but comes 
+-- We can also use *where* clause, which also creates
+-- a local scope for expressions like *let* but comes
 -- after the scope expressions
 
 lend2 amount balance = if balance < reserve
@@ -35,6 +35,6 @@ lend2 amount balance = if balance < reserve
                 where reserve = 100
                       newBalance = balance - amount
 
-main = do 
+main = do
     print $ lend 50 120
     print $ lend2 12 50
