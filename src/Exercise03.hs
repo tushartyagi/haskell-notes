@@ -6,6 +6,7 @@ myCount :: (Num a) => [a] -> Double
 myCount [] = 0
 myCount (x:xs) = 1 + myCount xs
 
+m
 
 -- SOLUTION 3: Write a function that computes the mean of a list
 -- takes in a list of Double and returns Double
@@ -38,4 +39,18 @@ ifPalindrome x | x /= myReverse x = False
 
 -- SOLUTION 6 -- A function takes in a list of list and 
 -- sorts them based on the number of elements
+
+-- Data.List.sortBy allows us to pass an ordering function, we'll
+-- create one that compares the length of lists using myCount function above
+-- that will change the integers to double, but that's fine because I've not
+-- learned about function overloading (if there's something like that in H)
+compareListsByLen :: [a] -> [a] -> Ordering
+compareListsByLen [] []  = EQ
+compareListsByLen x y | myCount x == myCount y = EQ
+compareListsByLen x y | myCount x < myCount y  = LT
+compareListsByLen x y | myCount x > myCount y  = GT
+
+sortListOLists :: [[a]] -> [[a]]
+sortListOLists [] = []
+
 
