@@ -2,5 +2,5 @@ import Exercise03
 
 
 main = do 
-    print $ myCount [1,2,3]
+    print $ meanList [1,2,3, 5.5]
 
