@@ -1,12 +1,16 @@
 module Exercise03 where   -- solution to the exercises of chapter 3
 
+import Data.List
+
 -- SOLUTION 1: Write a number which counts the number of elements in the list
 -- takes in a list of Num and returns Double
 myCount :: (Num a) => [a] -> Double
 myCount [] = 0
 myCount (x:xs) = 1 + myCount xs
 
-m
+--myCountInt :: [Int] -> Int
+myCountInt [] = 0
+myCountInt (x:xs) = 1 + myCountInt xs
 
 -- SOLUTION 3: Write a function that computes the mean of a list
 -- takes in a list of Double and returns Double
@@ -46,11 +50,10 @@ ifPalindrome x | x /= myReverse x = False
 -- learned about function overloading (if there's something like that in H)
 compareListsByLen :: [a] -> [a] -> Ordering
 compareListsByLen [] []  = EQ
-compareListsByLen x y | myCount x == myCount y = EQ
-compareListsByLen x y | myCount x < myCount y  = LT
-compareListsByLen x y | myCount x > myCount y  = GT
+compareListsByLen x y | myCountInt x == myCountInt y = EQ
+compareListsByLen x y | myCountInt x < myCountInt y  = LT
+compareListsByLen x y | myCountInt x > myCountInt y  = GT
 
-sortListOLists :: [[a]] -> [[a]]
-sortListOLists [] = []
-
+-- eta-reducing the function
+sortListOfLists = sortBy compareListsByLen
 
