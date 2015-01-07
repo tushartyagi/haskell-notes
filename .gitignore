@@ -1,3 +1,6 @@
+
+# CABAL Files
+
 dist
 cabal-dev
 *.o
@@ -9,6 +12,25 @@ cabal-dev
 .cabal-sandbox/
 cabal.sandbox.config
 cabal.config
+cabal-dev/
+Cabal/dist/
+Cabal/tests/Setup
+cabal-install/dist/
+cabal-install/tests/PackageTests/*/dist/
+.hpc/
+*.hi
+*.o
+*.p_hi
+*.prof
+*.tix
+dist-sandbox
+dist
+
+# TAGS files
+TAGS
+tags
+
+# emacs temp files
 .\#*
 *~
 \#*\#

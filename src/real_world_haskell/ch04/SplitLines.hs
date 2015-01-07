@@ -10,4 +10,13 @@ splitLines cs =
                 ('\n':rest) -> splitLines rest
                 _ -> []
 
+isLineTerminator :: Char -> Bool
 isLineTerminator c = c == '\r' || c == '\n'
+
+fixLines :: String->String
+fixLines input = unlines (splitLines input)
+
+myHead :: String -> Char
+myHead (x:_) = x
+myHead [] = 'A'
+         
